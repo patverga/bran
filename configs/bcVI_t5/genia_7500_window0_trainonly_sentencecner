@@ -1,0 +1,78 @@
+export MODEL_NAME='bcVI_t5/genia_7500_window0_trainonly'
+export train=${CDR_IE_ROOT}/src/train_multiclass_classifier.py
+
+data_root=${CDR_IE_ROOT}/data/chemprot_corpus/processed_7500_window0/protos
+export vocab_dir=${data_root}
+
+export positive_train=${data_root}/positive_0_CDR_train.txt.proto
+export negative_train=${data_root}/negative_0_CDR_train.txt.proto
+export positive_test=${data_root}/positive_0_CDR_train_dev.txt.proto
+export negative_test=${data_root}/negative_0_CDR_train_dev.txt.proto
+export positive_test_test=${data_root}/positive_0_CDR_test\*.txt.proto
+export negative_test_test=${data_root}/negative_0_CDR_test\*.txt.proto
+
+export ner_train=${data_root}/ner_CDR_train_sentence.txt.proto
+export ner_test=${data_root}/ner_CDR_dev_sentence.txt.proto
+export ner_prob=0.5
+export ner_weight=10.0
+
+# export doc_filter=${CDR_IE_ROOT}/data/bc6/bc6_pubmed_ids/bc6_train_dev_pubmed_ids.txt
+# export train_dev_percent=.85
+
+export logdir=$LOG_DIR
+export optimizer=adam
+export model_type=classifier
+# export embeddings=${CDR_IE_ROOT}/embeddings/PubMed-and-PMC-w2v.txt
+
+export bidirectional=True
+export in_memory=True
+export text_encoder=transformer_cnn_all_pairs
+export num_classes=6
+export kb_vocab_size=6
+export block_repeats=2
+
+export null_label=0
+
+export lr=.0005
+export margin=1.0
+export l2_weight=0
+export clip_norm=10
+export dropout_loss_weight=0
+
+export text_weight=1.0
+export text_prob=1.0
+export thresholds=.1,.2,.3,.4,.5,.6,.7,.75,.8,.85,.9,.95,.975
+
+export word_unk_dropout=0.85
+export word_dropout=0.5
+export lstm_dropout=0.85
+export final_dropout=0.5
+
+export epsilon=1e-8
+export beta1=.9
+export beta2=.9
+export noise_std=1.0
+
+export text_batch=8
+export kb_batch=32
+export ner_batch=32
+export eval_batch=8
+
+export token_dim=128
+export lstm_dim=128
+export embed_dim=128
+export position_dim=0
+
+export pos_noise=.33
+export neg_noise=.20
+# export percentile=True
+
+export kb_pretrain=0
+export kb_epochs=100000
+export text_epochs=100000
+export eval_every=33000
+export max_seq=2000
+export neg_samples=200
+export random_seed=1111
+
+# saved_models/bcVI_t5/genia_7500_window0_trainonly/2017-12-04-13/.0005_32_8_10_0.5_1.0_1.0_0_0_1.0_128_0_0_0_1.0_.85_.5_.85_.5_1e-8_.9_.9_25000_1.0_0_.5--max_decrease_epochs_11/train.log

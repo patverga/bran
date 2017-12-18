@@ -1,0 +1,74 @@
+export MODEL_NAME='cdr/relex/cdr_extra_data_genia'
+export train=${CDR_IE_ROOT}/src/train_multiclass_classifier.py
+
+data_root=${CDR_IE_ROOT}/data/cdr/processed/train_peng_genia/protos
+export vocab_dir=${data_root}
+
+export positive_train=${data_root}/positive_\*train\*.txt.proto
+export negative_train=${data_root}/negative_\*train\*_filtered.txt.proto
+export positive_test=${data_root}/positive_\*CDR_train\*.txt.proto
+export negative_test=${data_root}/negative_\*CDR_train\*_filtered.txt.proto
+export positive_test_test=${data_root}/positive_\*test.txt.proto
+export negative_test_test=${data_root}/negative_\*test_filtered.txt.proto
+
+export ner_train=${data_root}/ner_C\\*_train\\*.proto
+export ner_test=${data_root}/ner_CDR_dev\*.proto
+export ner_prob=0.5
+export ner_weight=10.0
+
+export doc_filter=${CDR_IE_ROOT}/data/cdr/CDR_pubmed_ids/CDR_Train_Dev_pubmed_ids.txt
+export train_dev_percent=.85
+export in_memory=True
+
+export logdir=$LOG_DIR
+export optimizer=adam
+export model_type=classifier
+export embeddings=${CDR_IE_ROOT}/embeddings/PubMed-and-PMC-w2v.txt
+
+export bidirectional=True
+export text_encoder=transformer_cnn_all_pairs
+export num_classes=2
+export kb_vocab_size=2
+export block_repeats=2
+
+export lr=.0005
+export margin=1.0
+export l2_weight=0
+export clip_norm=10
+export dropout_loss_weight=0
+
+export text_weight=1.0
+export text_prob=1.0
+
+export word_unk_dropout=0.95
+export word_dropout=.95
+export lstm_dropout=.95
+export final_dropout=.5
+
+export epsilon=1e-4
+export beta1=.1
+export beta2=.9
+export noise_std=0.1
+
+export text_batch=32
+export kb_batch=32
+export ner_batch=32
+
+export token_dim=200
+export lstm_dim=200
+export embed_dim=200
+export position_dim=0
+
+export pos_noise=.33
+export neg_noise=.20
+# export percentile=True
+
+export kb_pretrain=0
+export kb_epochs=100000
+export text_epochs=100000
+export eval_every=15000
+export max_seq=2000
+export neg_samples=200
+export random_seed=1111
+
+# saved_models/cdr/relex/cdr_extra_data_10000/\*/.0005_32_32_10_0.5_1.0_1.0_0_0_1.0_64_0_0_0_1.0_.95_.95_.95_.5_1e-4_.1_.9_25000_.1_0_.5_2_\*/train.log
