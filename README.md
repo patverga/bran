@@ -1,5 +1,10 @@
 # CDR_IE
 
+Requirements
+----------
+tensorflow version 1.0.1
+
+
 Environment Variables
 ------
 export CDR_IE_ROOT=`pwd`   
