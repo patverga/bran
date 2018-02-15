@@ -1,5 +1,12 @@
 # CDR_IE
 
+This code was used in the paper:  
+
+Simultaneously Self-attending to All Mentions for Full-Abstract Biological Relation Extraction  
+Patrick Verga , Emma Strubell, and Andrew McCallum.  
+North American Chapter of the Association for Computational Linguistics (NAACL) 2018
+
+
 Requirements
 ----------
 tensorflow version 1.0.1
