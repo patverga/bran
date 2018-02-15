@@ -11,13 +11,13 @@ min_count=5
 # process train, dev, and test data
 mkdir -p ${processed_dir}
 echo "Processing Training data"
-python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_TrainingSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_train.txt --max_seq ${max_len} --full_abstract
+python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_TrainingSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_train.txt --max_seq ${max_len} --full_abstract True
 
 echo "Processing Dev data"
-python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_DevelopmentSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_dev.txt --max_seq ${max_len} --full_abstract
+python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_DevelopmentSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_dev.txt --max_seq ${max_len} --full_abstract True
 
 echo "Processing Test data"
-python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_TestSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_test.txt --max_seq ${max_len} --full_abstract
+python ${CDR_IE_ROOT}/src/processing/utils/process_CDR_data.py --input_file ${input_dir}/CDR_TestSet.PubTator.txt.gz --output_dir ${processed_dir} --output_file_suffix CDR_test.txt --max_seq ${max_len} --full_abstract True
 
 
 # filter hyponyms
