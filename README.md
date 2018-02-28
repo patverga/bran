@@ -27,11 +27,6 @@ Process the CDR dataset including additional weakly labeled data
 
 These scripts will use byte-pair encoding (BPE) tokenization. There are also scripts to tokenize using the Genia tokenizer.
 
-## CTD  
-This script will generate the full CTD dataset. By default it will tokenize using BPE with a budget of 50k tokens.  
-`${CDR_IE_ROOT}/bin/process_CTD/generate_full_CTD_data.sh`
-
-
 # Run Model  
 Train a model locally on gpu id 0  
 `${CDR_IE_ROOT}/bin/run.sh ${CDR_IE_ROOT}/configs/cdr/relex/cdr_2500 0`   
@@ -51,3 +46,12 @@ To load a saved model, run
 You can download some pretrained models [here](https://goo.gl/X9umaB)
  
  
+## Generating the CTD dataset  
+This script will generate the full CTD dataset. The following command will tokenize using BPE with a budget of 50k tokens.  
+`${CDR_IE_ROOT}/bin/process_CTD/generate_full_CTD_data.sh`  
+
+You can also generate the data using the genia tokenizer with   
+`${CDR_IE_ROOT}/bin/process_CTD/generate_full_CTD_data_genia.sh`  
+
+By default, abstracts with > 500 tokens are discarded. To not filter you can change the MAX_LEN variable to a very large number. 
+

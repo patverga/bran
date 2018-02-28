@@ -25,7 +25,7 @@ fi
 
 if [ ! -f ${word_piece_vocab} ]; then
     echo "generating word-piece vocab with ${vocab_size} tokens"
-    python ${CDR_IE_ROOT}/src/processing/utils/learn_bpe.py -i <(less data/ctd/CTD_all_entities_pubtator_interactions.gz | grep -e '|t|' -e '|a|' | sed 's/^[0-9]\+|[ta]|//') -o ${word_piece_vocab} -s ${vocab_size}
+    python ${CDR_IE_ROOT}/src/processing/utils/learn_bpe.py -i <(less ${CTD_DIR}/CTD_all_entities_pubtator_interactions.gz | grep -e '|t|' -e '|a|' | sed 's/^[0-9]\+|[ta]|//') -o ${word_piece_vocab} -s ${vocab_size}
 fi
 
 echo "Converting data from pubtator to tsv format"
