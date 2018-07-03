@@ -45,4 +45,4 @@ echo "converting data to TF protos"
 python src/processing/labled_tsv_to_tfrecords.py --text_in_files ${PROCESSED_DIR}/shards/\*tive\* --out_dir ${PROCESSED_DIR}/protos --max_len ${MAX_LEN} --num_threads 30 --multiple_mentions --tsv_format --min_count ${MIN_COUNT}
 
 echo "converting NER data to TF protos"
-python src/processing/ner_to_tfrecords.py --in_file ${PROCESSED_DIR}/ner_${FILE_SUFFIX}\* --out_dir ${PROCESSED_DIR}/protos/ --load_vocab ${PROCESSED_DIR}/protos/ --num_threads 5
+python src/processing/ner_to_tfrecords.py --in_files ${PROCESSED_DIR}/ner_${FILE_SUFFIX}\* --out_dir ${PROCESSED_DIR}/protos/ --load_vocab ${PROCESSED_DIR}/protos/ --num_threads 5
