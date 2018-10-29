@@ -8,6 +8,7 @@ North American Chapter of the Association for Computational Linguistics (NAACL) 
 
 
 # Requirements  
+python version 2.7
 tensorflow version 1.0.1
 
 
